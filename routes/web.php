@@ -24,3 +24,13 @@ Route::get('/sastra', function () {
     return view('sastra');
 });
 
+Route::get('admin', function(){
+    return view('admin.index');
+});
+
+Auth::routes();
+//Route::post('admin/users/create','AdminUsersController@store')->name('admin.users.create');
+
+Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('admin/users','AdminUsersController@index')->name('admin.users.index');
+Route::resource('admin/users', 'AdminUsersController');
